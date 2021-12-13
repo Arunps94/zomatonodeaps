@@ -56,7 +56,7 @@ app.get('/restaurants/:id',(req,res) => {
 app.get('/restaurants',(req,res) => {
     var query = {};
     console.log(req.query.city)
-    if(req.query.state_id){
+    if(req.query.city){
         query={state_id:Number(req.query.city)}
     }
     db.collection('RestaurantsData').find(query).toArray((err,result) => {
