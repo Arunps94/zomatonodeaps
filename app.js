@@ -135,7 +135,7 @@ app.put('/updateStatus/:id',(req, res)=>{
         {id:id},
         {
             $set:{
-                "date":"",
+                "date":" ",
                 "bank_status":req.body.bank_status,
                 "bank":req.body.bank,
                 "status":status
@@ -163,7 +163,7 @@ app.post('/placeOrder',(req, res) => {
 })
 
 app.delete('/deleteOrder',(req,res)=>{
-db.collection('orders').remove({},(err, result) => {
+db.collection('orders').deleteMany({},(err, result) => {
     if(err) throw err;
     res.send(result)
 })
