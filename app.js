@@ -148,7 +148,7 @@ app.put('/updateStatus/:id',(req, res)=>{
 // return all the orders
 app.get('/orders',(req,res) => {
    var query = req.query.email
-    db.collection('orders').find({query}).toArray((err,result) => {
+    db.collection('orders').find({email:query}).toArray((err,result) => {
         if(err) throw err;
         res.send(result)
     })
